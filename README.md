@@ -17,17 +17,20 @@ This example showcases the use of feature flags in a Python application. It uses
 
 ## Build and execute the demo
 
-1. Clone the repo:
+1. Clone the repo
+   
 ```bash
 $ git clone https://github.com/mkaesz/launchdarkly-python-demo.git` && cd launchdarkly-python-demo
 ```
 
 1. Export the LaunchDarkly Access Token
+   
 ```bash
 $ export LAUNCHDARKLY_ACCESS_TOKEN=abc123
 ```
 
 1. Execute Terraform to provision the project, environments, and feature flags
+   
 ```bash
 $ terraform init
 $ terraform plan 
