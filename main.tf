@@ -45,7 +45,6 @@ resource "launchdarkly_feature_flag" "new-feature-kill-switch" {
   }
 }
 
-
 # Create a new feature flag
 resource "launchdarkly_feature_flag" "cool-new-feature" {
   project_key = launchdarkly_project.demo-project.key
@@ -67,6 +66,7 @@ resource "launchdarkly_feature_flag" "cool-new-feature" {
   }
 }
 
+# Add targeting for user "Marc"
 resource "launchdarkly_feature_flag_environment" "number_env" {
   flag_id = launchdarkly_feature_flag.cool-new-feature.id
   env_key = launchdarkly_project.demo-project.environments[0].key
@@ -83,7 +83,6 @@ resource "launchdarkly_feature_flag_environment" "number_env" {
   }
 
   off_variation = 1
-
 }
 
 output "staging_env_key" {
