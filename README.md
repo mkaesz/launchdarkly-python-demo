@@ -1,6 +1,6 @@
 # launchdarkly-python-demo
 
-This example showcases the use of feature flags in a Python application. It uses Terraform to provision the all LaunchDarkly resources. The application uses Python with Flask and the LaunchDarkly Server SDK.
+This example showcases the use of feature flags in a Python application. It uses Terraform to provision all LaunchDarkly resources. The application uses Python with Flask and the LaunchDarkly Server SDK.
 
 ## Assumptions
 
