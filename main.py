@@ -26,13 +26,18 @@ def show_user(user):
   context = Context.builder(f'user-key-{user}').name(user).build()
   print("The context is:", context)
 
-  is_feature_enabled = ldclient.get().variation("new-feature", context, False)
-  print("The feature flag 'new-feature' is:", is_feature_enabled)
+  new_feature_kill_switch = ldclient.get().variation("new-feature-kill-switch", context, False)
+  print(new_feature_kill_switch)
+ 
+  is_feature_enabled_for_user = ldclient.get().variation("new-feature", context, False)
+  print("The feature flag 'new-feature' is:", is_feature_enabled_for_user)
 
-  # Check if the new feature should be shown for the current user  
-  if is_feature_enabled:
-    ldclient.get().track("metric-key-user-marc", context)
-    return f"<p>Welcome, {user}! Enjoy using the new cool feature.</p>"
+  if not new_feature_kill_switch:
+
+    # Check if the new feature should be shown for the current user  
+    if is_feature_enabled_for_user:
+      ldclient.get().track("metric-key-user-marc", context)
+      return f"<p>Welcome, {user}! Enjoy using the new cool feature.</p>"
 
   return f"<p>Hello, {user}!</p>"
 

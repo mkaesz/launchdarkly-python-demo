@@ -24,6 +24,28 @@ resource "launchdarkly_project" "demo-project" {
     }
 }
 
+# Create a a kill switch for the new feature
+resource "launchdarkly_feature_flag" "new-feature-kill-switch" {
+  project_key = launchdarkly_project.demo-project.key
+  key         = "new-feature-kill-switch"
+  name        = "Kill switch for cool new feature"
+  description = "Kill switch for cool new feature"
+
+  variation_type = "boolean"
+  variations {
+    value       = "true"
+    name        = "Enabled"
+    description = "Kill switch for new cool new feature is enabled"
+  }
+
+  variations {
+    value       = "false"
+    name        = "Disabled"
+    description = "Kill switch for cool new feature is disabled."
+  }
+}
+
+
 # Create a new feature flag
 resource "launchdarkly_feature_flag" "cool-new-feature" {
   project_key = launchdarkly_project.demo-project.key
