@@ -16,6 +16,7 @@ This example showcases the use of feature flags in a Python application. It uses
 1. [Create an LaunchDarkly access token](https://docs.launchdarkly.com/home/account-security/api-access-tokens#creating-api-access-tokens)
 
 ## Build and execute the demo
+
 1. Clone the repo:
 ```bash
 $ git clone https://github.com/mkaesz/launchdarkly-python-demo.git` && cd launchdarkly-python-demo
