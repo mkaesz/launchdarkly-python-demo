@@ -27,11 +27,12 @@ def show_user(user):
   print("The context is:", context)
 
   new_feature_kill_switch = ldclient.get().variation("new-feature-kill-switch", context, False)
-  print(new_feature_kill_switch)
+  print("The kill switch for the new cool feature is:", new_feature_kill_switch)
  
   is_feature_enabled_for_user = ldclient.get().variation("new-feature", context, False)
   print("The feature flag 'new-feature' is:", is_feature_enabled_for_user)
 
+  # Continue if kill switch for new feature is disabled
   if not new_feature_kill_switch:
 
     # Check if the new feature should be shown for the current user  
