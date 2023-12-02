@@ -5,6 +5,7 @@ This example showcases the use of feature flags in a Python application. It uses
 ## Assumptions
 
 1. You are using Bash. If not, the export commands must be substituted accordingly.
+1. You have a LaunchDarkly account. 
 
 
 ## Prerequisites
@@ -20,7 +21,7 @@ This example showcases the use of feature flags in a Python application. It uses
 $ git clone https://github.com/mkaesz/launchdarkly-python-demo.git` && cd launchdarkly-python-demo
 ```
 
-1. Export the LaunchDarkly Access Token:
+1. Export the LaunchDarkly Access Token
 ```bash
 $ export LAUNCHDARKLY_ACCESS_TOKEN=abc123
 ```
@@ -82,6 +83,7 @@ Flask is being executed in Development mode.
 ```bash
 $ flask --app main run
 ```
+
 The output should look like that:
 ```bash
 SDK successfully initialized!
@@ -102,7 +104,7 @@ $ curl http://127.0.0.1:5000
 <p>Hello, World!</p>
 ```
 
-1. No feature flag involved, but name gets printed as per URL path, but still no feature glag involved.
+1. No feature flag involved, but name is being provided as part of the URL and gets printed out, but still no feature flag involved.
 ```bash
 $ curl http://127.0.0.1:5000/user/Jim
 <p>Hello, Jim!</p>
@@ -129,6 +131,7 @@ Disabling the kill switch:
 ```bash
 bash turn_off_kill_switch.sh
 ```
+
 Another call with user "Marc" should result in this output:
 ```bash
 $ curl http://127.0.0.1:5000/user/Marc
