@@ -12,7 +12,7 @@ This example showcases the use of feature flags in a Python application. It uses
 
 1. [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) 
 1. [Install jq](https://jqlang.github.io/jq/download/)
-1. Install Python with your preferred package manager.
+1. Install Python 3 with your preferred package manager.
 1. [Create an LaunchDarkly access token](https://docs.launchdarkly.com/home/account-security/api-access-tokens#creating-api-access-tokens)
 
 ## Build and execute the demo
