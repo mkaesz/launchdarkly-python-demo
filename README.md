@@ -79,6 +79,14 @@ This example showcases the use of feature flags in a Python application. It uses
    $ export LD_SDK_KEY=$(terraform output -json | jq -r .staging_env_key.value)
    ```
 
+1. Create a virtual Python environment and install dependencies
+
+   ```bash
+   $ python3 -m venv venv
+   $ . venv/bin/activate
+   $ pip install -r requirements.txt
+   ```
+
 1. Run Flask
 
    Flask is being executed in Development mode.
@@ -126,7 +134,7 @@ This example showcases the use of feature flags in a Python application. It uses
    ```bash
    bash turn_on_kill_switch.sh
    ```
-   Another call with user "Marc" should result in the same output as for all other users now.
+   Another call with user "Marc" should result in the same output as for all other users now. A restart of Flask might be necessary to see the change.
    
    ```bash
    $ curl http://127.0.0.1:5000/user/Marc
