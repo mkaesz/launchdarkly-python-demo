@@ -106,7 +106,7 @@ This example showcases the use of feature flags in a Python application. It uses
    ```
    "SDK successfully initialized" means that the LaunchDarkly environment key has been found and a connection to the LaunchDarkly servers could be established.
 
-### Execute various API call to showcase the feature flags
+### Execute various API calls to showcase the feature flags
 
 1. No feature flag involved 
 
